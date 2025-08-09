@@ -6,9 +6,9 @@
   "main": ".vite/build/index.js",
   "scripts": {
     "start": "electron-forge start",
-    "package": "electron-forge package",
-    "make": "electron-forge make",
-    "publish:electron": "electron-forge publish",
+    "package": "cross-env NODE_ENV=production dotenv -- electron-forge package",
+    "make": "cross-env NODE_ENV=production dotenv -- electron-forge make",
+    "publish:electron": "cross-env NODE_ENV=production dotenv -- electron-forge publish",
     "lint": "eslint --ext .ts,.tsx ."
   },
   "keywords": [],
@@ -32,6 +32,8 @@
     "@types/react-dom": "^19.1.7",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
+    "cross-env": "^10.0.0",
+    "dotenv-cli": "^10.0.0",
     "electron": "37.2.6",
     "eslint": "^8.57.1",
     "eslint-plugin-import": "^2.32.0",
