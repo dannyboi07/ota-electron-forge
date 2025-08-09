@@ -7,6 +7,8 @@ import { MakerDMG } from "@electron-forge/maker-dmg";
 import { VitePlugin } from "@electron-forge/plugin-vite";
 import { FusesPlugin } from "@electron-forge/plugin-fuses";
 import { FuseV1Options, FuseVersion } from "@electron/fuses";
+// import { PublisherS3 } from "@electron-forge/publisher-s3";
+import { PublisherGithub } from "@electron-forge/publisher-github";
 
 const config: ForgeConfig = {
     packagerConfig: {
@@ -55,6 +57,23 @@ const config: ForgeConfig = {
             [FuseV1Options.EnableEmbeddedAsarIntegrityValidation]: true,
             [FuseV1Options.OnlyLoadAppFromAsar]: true,
         }),
+    ],
+    publishers: [
+        new PublisherGithub({
+            repository: {
+                name: "ota-electron-forge",
+                owner: "dannyboi07",
+            },
+            draft: true,
+        }),
+        // new PublisherS3({
+        //     endpoint: "http://localhost:9000",
+        //     bucket: "releases",
+        //     region: "ap-south-1",
+        //     accessKeyId: "minioadmin",
+        //     secretAccessKey: "minioadmin",
+        //     public: true,
+        // }),
     ],
 };
 
