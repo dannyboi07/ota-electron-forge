@@ -1,8 +1,12 @@
 {
   "name": "ota-electron-forge",
   "productName": "ota-electron-forge",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "My Electron application description",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:dannyboi07/ota-electron-forge.git"
+  },
   "main": ".vite/build/index.js",
   "scripts": {
     "start": "electron-forge start",

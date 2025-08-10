@@ -6,6 +6,7 @@ function Root() {
         <Base>
             <h1>💖 Hello World!</h1>
             <p>Welcome to your Electron application.</p>
+            <p>This is version 1.0.2!</p>
         </Base>
     );
 }
