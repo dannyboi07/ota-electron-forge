@@ -1,4 +1,4 @@
-import { updateElectronApp, UpdateSourceType } from "update-electron-app";
+import { updateElectronApp } from "update-electron-app";
 import logger from "electron-log";
 
 class Updater {
@@ -12,10 +12,10 @@ class Updater {
         updateElectronApp({
             logger: this.logger,
             notifyUser: true,
-            updateSource: {
-                type: UpdateSourceType.StaticStorage,
-                baseUrl: `http://localhost:9000/releases/${process.platform}/${process.arch}`,
-            },
+            // updateSource: {
+            //     type: UpdateSourceType.StaticStorage,
+            //     baseUrl: `http://localhost:9000/releases/${process.platform}/${process.arch}`,
+            // },
         });
     }
 }
